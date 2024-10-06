@@ -7,9 +7,9 @@ function Display({ display }) {
   );
 }
 
-function Key({label, onClick}) {
+function Key({label, onClick, className}) {
   return (
-    <button onClick={onClick}>
+    <button className={className} onClick={onClick}>
       {label}
     </button>
   );
@@ -21,10 +21,7 @@ function App() {
   const [num1, setNum1] = useState(null);
   const [num2, setNum2] = useState(null);
   const [op, setOp] = useState(null);
-
-
-// 
-
+  const [u, setU] = useState(null);
 
   const numClickHandler = (e) => {
     e.preventDefault();
@@ -59,6 +56,13 @@ function App() {
     console.log(num1 + '|' + op + '|' + num2);
   }
 
+  const uClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    setU(value);
+    setDisp("John Roy Ducut");
+  
+  }
   const eqClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
@@ -84,32 +88,33 @@ function App() {
   }
 
 
-// 
-  
-
   return (
     <div className="App">
+        <h1>Calculator of John Roy Ducut - IT3A</h1>
       <div className="Calc">
         <div className="Disp">
           <Display display={disp} />
-        </div>
+        </div>  
+        <div className="Border">
         <div className="Buttons">
           <Key label={7} onClick={numClickHandler}/>
           <Key label={8} onClick={numClickHandler}/>
           <Key label={9} onClick={numClickHandler}/>
-          <Key label={"÷"} onClick={opClickHandler}/>
+          <Key label={"÷"} onClick={opClickHandler} className="cyan-button" />
           <Key label={4} onClick={numClickHandler}/>
           <Key label={5} onClick={numClickHandler}/>
           <Key label={6} onClick={numClickHandler}/>
-          <Key label={"×"} onClick={opClickHandler}/>
+          <Key label={"×"} onClick={opClickHandler} className="cyan-button"/>
           <Key label={1} onClick={numClickHandler}/>
           <Key label={2} onClick={numClickHandler}/>
           <Key label={3} onClick={numClickHandler}/>
-          <Key label={"-"} onClick={opClickHandler}/>
-          <Key label={"CLR"} onClick={clrClickHandler}/>
+          <Key label={"-"} onClick={opClickHandler} className="cyan-button"/>
+          <Key label={"CLR"} onClick={clrClickHandler} className="blue-button" />
           <Key label={0} onClick={numClickHandler}/>
           <Key label={"="} onClick={eqClickHandler}/>
-          <Key label={"+"} onClick={opClickHandler}/>
+          <Key label={"+"} onClick={opClickHandler} className="cyan-button" />
+          <Key label={"Ducut"} onClick={uClickHandler} className="full-width red-button" />
+          </div>
         </div>
       </div>
     </div>
