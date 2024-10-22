@@ -2,9 +2,7 @@ import './App.css';
 import { useState } from "react";
 
 function Display({ display }) {
-  return (
-    <>{display}</>
-  );
+  return <>{display}</>;
 }
 
 function Key({ label, onClick, className }) {
@@ -16,12 +14,7 @@ function Key({ label, onClick, className }) {
 }
 
 function App() {
-  const [disp, setDisp] = useState(0);
-  const [num1, setNum1] = useState(null);
-  const [num2, setNum2] = useState(null);
-  const [op, setOp] = useState(null);
-
-  const outputs = [
+  const values = [
     "Having A Strong Work Ethic",
     "Being On Time",
     "Making An Effort",
@@ -34,57 +27,47 @@ function App() {
     "Being Prepared"
   ];
 
+  const [disp, setDisp] = useState(0);
+  const [num1, setNum1] = useState(null);
+  const [num2, setNum2] = useState(null);
+  const [op, setOp] = useState(null);
+
   const numClickHandler = (e) => {
     e.preventDefault();
-    const value = parseInt(e.target.innerHTML);
+    const index = parseInt(e.target.innerHTML);
     if (op === null) {
-      if (num1 === null) {
-        setNum1(value);
-        setDisp(outputs[value]);
-      } else {
-        setNum1(value);
-        setDisp(outputs[value]);
-      }
+      setNum1(index);
+      setDisp(values[index]);
     } else {
-      if (num2 === null) {
-        setNum2(value);
-        setDisp(outputs[value]);
-      } else {
-        setNum2(value);
-        setDisp(outputs[value]);
-      }
+      setNum2(index);
+      setDisp(values[index]);
     }
-    console.log(num1 + '|' + op + '|' + num2);
-  }
+  };
 
   const opClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
     setOp(value);
     setDisp(value);
-    console.log(num1 + '|' + op + '|' + num2);
-  }
+  };
 
-  const eqClickHandler = () => {
-    if (num1 !== null && num2 !== null) {
-      let result;
-      if (op === "+") {
-        result = outputs[num1] + " and " + outputs[num2];
-      } else if (op === "-") {
-        result = outputs[num1];
-      } else {
-        result = "ERROR";
-      }
-      setDisp(result);
+  const eqClickHandler = (e) => {
+    e.preventDefault();
+    if (op === "+") {
+      setDisp(values[num1] + " + " + values[num2]);
+    } else if (op === "-") {
+      setDisp(values[num1] + " - " + values[num2]);
+    } else {
+      setDisp("ERROR");
     }
-  }
+  };
 
-  const clrClickHandler = () => {
+  const clrClickHandler = (e) => {
     setNum1(null);
     setNum2(null);
     setOp(null);
     setDisp("10 Things That Require Zero Talent");
-  }
+  };
 
   return (
     <div className="App">
@@ -92,7 +75,7 @@ function App() {
       <div className="Calc">
         <div className="Disp">
           <Display display={disp} />
-        </div>
+        </div>  
         <div className="Border">
           <div className="Buttons">
             <Key label={1} onClick={numClickHandler} />
@@ -104,11 +87,9 @@ function App() {
             <Key label={7} onClick={numClickHandler} />
             <Key label={8} onClick={numClickHandler} />
             <Key label={9} onClick={numClickHandler} />
+            <Key label={"Reset"} onClick={clrClickHandler} className="blue-button" />
             <Key label={0} onClick={numClickHandler} />
-            <Key label={"+"} onClick={opClickHandler} className="cyan-button" />
-            <Key label={"-"} onClick={opClickHandler} className="cyan-button" />
-            <Key label={"="} onClick={eqClickHandler} />
-            <Key label={"RESET"} onClick={clrClickHandler} className="blue-button" />
+            <Key label={"Ducut"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
           </div>
         </div>
       </div>
