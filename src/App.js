@@ -27,7 +27,7 @@ function App() {
     "Being Prepared"
   ];
 
-  const [disp, setDisp] = useState(0);
+  const [disp, setDisp] = useState("10 Things That Require Zero Talent");
   const [num1, setNum1] = useState(null);
   const [num2, setNum2] = useState(null);
   const [op, setOp] = useState(null);
@@ -78,9 +78,9 @@ function App() {
         </div>  
         <div className="Border">
           <div className="Buttons">
-            <Key label={"What I learned?"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
-            <Key label={"What I want to learn?"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
-            <Key label={"How will I learn"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
+            <Key label={"What I learned?"} onClick={() => setDisp("John Roy Ducut")} className="full-width gray-button" />
+            <Key label={"What I want to learn?"} onClick={() => setDisp("John Roy Ducut")} className="full-width gray-button" />
+            <Key label={"How will I learn"} onClick={() => setDisp("John Roy Ducut")} className="full-width gray-button" />
             <Key label={1} onClick={numClickHandler} />
             <Key label={2} onClick={numClickHandler} />
             <Key label={3} onClick={numClickHandler} />
