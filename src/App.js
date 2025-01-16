@@ -78,7 +78,7 @@ function App() {
         </div>  
         <div className="Border">
           <div className="Buttons">
-            <Key label={"What I learned?"} onClick={() => setDisp("John Roy Ducut")} className="full-width gray-button" />
+            <Key label={"What I learned?"} onClick={() => setDisp("The course taught me valuable IT and software development skills, including frontend and API development, CRUD operations, and testing. It provided hands-on experience with technologies like React, Next.js, Java Spring Boot, and JMeter. Lastly, which I believe is the most important thing I learned, are the 10 Things That Require Zero Talent, which will be crucial when I join the industries. ")} className="full-width gray-button" />
             <Key label={"What I want to learn?"} onClick={() => setDisp("John Roy Ducut")} className="full-width gray-button" />
             <Key label={"How will I learn"} onClick={() => setDisp("John Roy Ducut")} className="full-width gray-button" />
             <Key label={1} onClick={numClickHandler} />
@@ -92,7 +92,7 @@ function App() {
             <Key label={9} onClick={numClickHandler} />
             <Key label={"Reset"} onClick={clrClickHandler} className="blue-button" />
             <Key label={0} onClick={numClickHandler} />
-            <Key label={"Ducut"} onClick={() => setDisp("John Roy Ducut")} className="red-button" />
+            <Key label={"Name"} onClick={() => setDisp("JOHN ROY DUCUT")} className="red-button" />
           </div>
         </div>
       </div>
