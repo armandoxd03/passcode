@@ -78,6 +78,9 @@ function App() {
         </div>  
         <div className="Border">
           <div className="Buttons">
+            <Key label={"What I learned?"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
+            <Key label={"What I want to learn?"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
+            <Key label={"How will I learn"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
             <Key label={1} onClick={numClickHandler} />
             <Key label={2} onClick={numClickHandler} />
             <Key label={3} onClick={numClickHandler} />
@@ -87,9 +90,10 @@ function App() {
             <Key label={7} onClick={numClickHandler} />
             <Key label={8} onClick={numClickHandler} />
             <Key label={9} onClick={numClickHandler} />
-            <Key label={"Reset"} onClick={clrClickHandler} className="blue-button" />
             <Key label={0} onClick={numClickHandler} />
+            <Key label={"Reset"} onClick={clrClickHandler} className="blue-button" />
             <Key label={"Ducut"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
+
           </div>
         </div>
       </div>
