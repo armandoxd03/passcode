@@ -27,7 +27,7 @@ function App() {
     "Being Prepared"
   ];
 
-  const [disp, setDisp] = useState("10 Things That Require Zero Talent");
+  const [disp, setDisp] = useState("C-PEITEL3 EXPECTATIONS");
   const [num1, setNum1] = useState(null);
   const [num2, setNum2] = useState(null);
   const [op, setOp] = useState(null);
@@ -90,8 +90,8 @@ function App() {
             <Key label={7} onClick={numClickHandler} />
             <Key label={8} onClick={numClickHandler} />
             <Key label={9} onClick={numClickHandler} />
-            <Key label={0} onClick={numClickHandler} />
             <Key label={"Reset"} onClick={clrClickHandler} className="blue-button" />
+            <Key label={0} onClick={numClickHandler} />
             <Key label={"Ducut"} onClick={() => setDisp("John Roy Ducut")} className="red-button" />
           </div>
         </div>
