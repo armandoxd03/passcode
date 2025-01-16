@@ -92,7 +92,7 @@ function App() {
             <Key label={9} onClick={numClickHandler} />
             <Key label={0} onClick={numClickHandler} />
             <Key label={"Reset"} onClick={clrClickHandler} className="blue-button" />
-            <Key label={"Ducut"} onClick={() => setDisp("John Roy Ducut")} className="full-width red-button" />
+            <Key label={"Ducut"} onClick={() => setDisp("John Roy Ducut")} className="red-button" />
           </div>
         </div>
       </div>
