@@ -26,13 +26,14 @@
   border: 1px solid black;
   border-radius: 5px;
   background-color: lightgray;
-  font-size: 5vw;
-  height: 300px;
+  font-size: 4vw;
+  height: 250px;
   text-align: left;
   margin: 20px;
   padding: 15px;
   word-wrap: break-word;
   overflow: hidden;
+}
 
 .Buttons {
   display: grid;
@@ -49,7 +50,8 @@
   border: 2px solid black;
   font-size: 1.5rem;
   border-radius: 5px;
-  color: white;
+  color: black;
+  padding: 15px;
 }
 
 .Buttons > button:hover {
@@ -89,4 +91,35 @@
 
 .gray-button:hover {
   background-color: #808080 !important;
+}
+
+.green-button {
+  background-color: green !important;
+  color: white !important;
+  border: 2px solid black;
+}
+
+.green-button:hover {
+  background-color: #006400 !important;
+}
+
+
+.purple-button {
+  background-color: #c704c7 !important;
+  color: white !important;
+  border: 2px solid black;
+}
+
+.purple-button:hover {
+  background-color: purple !important;
+}
+
+.orange-button {
+  background-color: orange !important;
+  color: white !important;
+  border: 2px solid black;
+}
+
+.orange-button:hover {
+  background-color: #ff8c00 !important;
 }
